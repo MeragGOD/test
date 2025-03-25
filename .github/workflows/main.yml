@@ -23,10 +23,10 @@ jobs:
         run: mvn clean package
 
       - name: Build Docker image
-        run: docker build -t your-dockerhub-username/your-image-name:latest .
+        run: docker build -t enteigod/your-image-name:latest .
 
       - name: Log in to Docker Hub
-        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+        run: docker login -u ${{ enteigod }} -p ${{ dckr_pat_yxzsdi-eUrQIeyBOqgPjI3F-lJA }}
 
       - name: Push Docker image to Docker Hub
         run: docker push your-dockerhub-username/your-image-name:latest
