@@ -13,16 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Build Docker image
-        run: docker build -t enteigod/your-image-name:${{ github.sha }} .
-
-      - name: Push latest tag
-        run: |
-          docker tag your-dockerhub-username/your-image-name:${{ github.sha }} your-dockerhub-username/your-image-name:latest
-          docker push your-dockerhub-username/your-image-name:latest
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
